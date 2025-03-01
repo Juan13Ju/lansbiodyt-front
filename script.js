@@ -25,24 +25,25 @@ saveBtn.addEventListener('click', async () => {
     date_of_birth: dob,
     email: email
   };
+  alert('Data saved succesfully')
 
-  try {
-    const response = await fetch(`http://localhost:8000/patients/${boardId}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
+  // try {
+  //   const response = await fetch(`http://localhost:8000/patients/${boardId}`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify(payload)
+  //   });
 
-    if (response.ok) {
-      alert('Datos guardados de manera exitosa');
-    } else {
-      const error = await response.json();
-      alert(`Error: ${error.detail || 'Algo salió mal'}, intenta de nuevo`);
-    }
-  } catch (error) {
-    console.error('Error enviando request:', error);
-    alert('Hubo un error, por favor intenta de nuevo.');
-  }
+  //   if (response.ok) {
+  //     alert('Datos guardados de manera exitosa');
+  //   } else {
+  //     const error = await response.json();
+  //     alert(`Error: ${error.detail || 'Algo salió mal'}, intenta de nuevo`);
+  //   }
+  // } catch (error) {
+  //   console.error('Error enviando request:', error);
+  //   alert('Hubo un error, por favor intenta de nuevo.');
+  //}
 });
